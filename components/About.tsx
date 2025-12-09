@@ -31,7 +31,7 @@ const About: React.FC = () => {
                   <Eye className="w-8 h-8" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-white mb-2">Spy The Process</h4>
+                  <h4 className="text-xl font-bold text-white mb-2">Veja o processo</h4>
                   <p className="text-gray-400">20 futuros produtores em uma casa. Mentores construindo ao vivo. Você vê tudo.</p>
                 </div>
               </div>
