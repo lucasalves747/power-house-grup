@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
       {/* Navbar Placeholder */}
       <div className="absolute top-6 left-0 right-0 px-6 max-w-7xl mx-auto flex justify-between items-center z-20">
         <img 
-          src="https://storage.googleapis.com/msgsndr/dkM0aNpySiIFf3uusFTa/media/6924bc728e95931a56e7af3d.png" 
+          src="https://storage.googleapis.com/msgsndr/dkM0aNpySiIFf3uusFTa/media/6938351b10381826274a643d.png" 
           alt="Power House Logo" 
           className="h-10 md:h-12"
         />
@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
         {/* Main Logo in Hero */}
         <div className="mb-4 animate-fade-in-up">
            <img 
-            src="https://storage.googleapis.com/msgsndr/dkM0aNpySiIFf3uusFTa/media/6924bc728e95931a56e7af3d.png" 
+            src="https://storage.googleapis.com/msgsndr/dkM0aNpySiIFf3uusFTa/media/6938351b10381826274a643d.png" 
             alt="Power House Logo" 
             className="h-20 md:h-32 mx-auto drop-shadow-[0_0_35px_rgba(168,85,247,0.5)]"
           />
