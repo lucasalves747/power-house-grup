@@ -14,9 +14,9 @@ const Hero: React.FC = () => {
       {/* Navbar Placeholder */}
       <div className="absolute top-6 left-0 right-0 px-6 max-w-7xl mx-auto flex justify-between items-center z-20">
         <img 
-          src="https://storage.googleapis.com/msgsndr/dkM0aNpySiIFf3uusFTa/media/6938351b10381826274a643d.png" 
+          src="https://storage.googleapis.com/msgsndr/dkM0aNpySiIFf3uusFTa/media/693af904517c3a084b5d8cf1.png" 
           alt="Power House Logo" 
-          className="h-20 md:h-20 rotate-90"
+          className="h-20 md:h-20 "
         />
         <button 
           onClick={scrollToForm}
@@ -31,9 +31,9 @@ const Hero: React.FC = () => {
         {/* Main Logo in Hero */}
         <div className="mb-4 animate-fade-in-up">
            <img 
-            src="https://storage.googleapis.com/msgsndr/dkM0aNpySiIFf3uusFTa/media/6938351b10381826274a643d.png" 
+            src="https://storage.googleapis.com/msgsndr/dkM0aNpySiIFf3uusFTa/media/693af904517c3a084b5d8cf1.png" 
             alt="Power House Logo" 
-            className="h-40 sm:h-60 mx-auto drop-shadow-[0_0_35px_rgba(168,85,247,0.5)] rotate-90"
+            className="h-[300px] sm:h-60 mx-auto drop-shadow-[0_0_35px_rgba(168,85,247,0.5)] "
           />
           
         </div>
