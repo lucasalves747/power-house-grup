@@ -1,72 +1,90 @@
 import React from 'react';
-import Button from './ui/Button';
+import { RegistrationForm } from './RegistrationForm';
+import { Calendar, Users, Zap, AlertCircle } from 'lucide-react';
+import  {Button}  from './ui/Button';
 
-const Hero: React.FC = () => {
-  const scrollToForm = () => {
-    document.getElementById('cadastro')?.scrollIntoView({ behavior: 'smooth' });
-  };
+interface HeroProps {
+  onCtaClick: () => void;
+}
 
+export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-16 px-4 overflow-hidden">
-      {/* Background Ambience */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[800px] bg-purple-900/20 rounded-full blur-[120px] -z-10 opacity-50"></div>
+    <section className="relative pt-24  md:pt-32 md:pb-20 overflow-hidden">
+      {/* Background Ambience - Softer */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-purple-900/10 blur-[100px] rounded-full pointer-events-none z-0"></div>
       
-      {/* Navbar Placeholder */}
-      <div className="absolute top-6 left-0 right-0 px-6 max-w-7xl mx-auto flex justify-between items-center z-20">
-        <img 
-          src="https://storage.googleapis.com/msgsndr/dkM0aNpySiIFf3uusFTa/media/693af904517c3a084b5d8cf1.png" 
-          alt="Power House Logo" 
-          className="h-20 md:h-20 "
-        />
-        <button 
-          onClick={scrollToForm}
-          className="hidden md:block bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-2 rounded-full font-bold text-sm hover:opacity-90 transition "
-        >
-          QUERO MINHA VAGA →
-        </button>
-      </div>
-
-      <div className="text-center max-w-5xl mx-auto z-10 flex flex-col items-center gap-8">
-        
-        {/* Main Logo in Hero */}
-        <div className="mb-4 animate-fade-in-up">
-           <img 
-            src="https://storage.googleapis.com/msgsndr/dkM0aNpySiIFf3uusFTa/media/693af904517c3a084b5d8cf1.png" 
-            alt="Power House Logo" 
-            className="h-[200px] sm:h-[300px]   mx-auto drop-shadow-[0_0_35px_rgba(168,85,247,0.5)] "
-          />
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           
-        </div>
+          {/* Left Column: Copy - Simplified and Cleaner */}
+          <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left">
+            
+            {/* Logo in Hero */}
+            <div className="flex justify-center lg:justify-start mb-8">
+              <img 
+                src="https://storage.googleapis.com/msgsndr/dkM0aNpySiIFf3uusFTa/media/693af904517c3a084b5d8cf1.png" 
+                alt="Power House Logo" 
+                className="h-[300px] w-auto object-contain"
+              />
+            </div>
 
-        {/* Date Pill */}
-        <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-6 py-2 backdrop-blur-md mb-2">
-          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-          <span className="text-gray-300 font-medium text-sm md:text-base">12 a 14 de Dezembro 2025</span>
-        </div>
+            {/* Top Status */}
+            <div className="inline-flex items-center justify-center lg:justify-start gap-2 mb-6">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                </span>
+                <span className="text-sm font-semibold text-green-400 tracking-widest uppercase">Evento Online e Gratuito</span>
+            </div>
 
-        {/* Headlines */}
-        <h1 className="font-display font-black text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight">
-          Acompanhe a construção de legados <br className="hidden md:block" />
-          <span className="gradient-text">em apenas 3 dias</span>
-        </h1>
+            {/* Main Headline - Improved spacing and readability */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-white mb-6">
+              Eles Pagaram <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">$2.000</span> Para Viver Essa Transformação.
+            </h1>
 
-        <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          Testemunhe imersões profundas para a criação de métodos, livros e produtos ao lado dos mentores especialistas.
-        </p>
+            {/* Secondary Headline & Description */}
+            <div className="space-y-4 max-w-2xl mx-auto lg:mx-0 mb-8">
+               <p className="text-2xl text-white font-medium">
+                 Você Pode Assistir Tudo — <span className="text-purple-300">Ao Vivo e 100% Gratuito.</span>
+               </p>
+               <p className="text-base md:text-lg text-gray-400 leading-relaxed font-light">
+                 Durante 3 dias, 15 especialistas vão criar seus próprios métodos, produtos e funis com mentoria de alto nível — e você vai ver tudo acontecer, em tempo real.
+               </p>
+            </div>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col md:flex-row gap-4 mt-4 w-full md:w-auto">
-          <Button onClick={scrollToForm} fullWidth>
-            QUERO ASSISTIR AGORA!
-          </Button>
-          <Button variant="secondary" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} fullWidth>
-            Saber Mais
-          </Button>
+            {/* Key Tags - Replaces the heavy grid/box */}
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8 lg:mb-0">
+                <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full border border-white/10 text-sm text-gray-300">
+                    <Calendar className="w-4 h-4 text-purple-400" /> 3 Dias
+                </span>
+                <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full border border-white/10 text-sm text-gray-300">
+                    <Users className="w-4 h-4 text-purple-400" /> 15 Experts
+                </span>
+                <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full border border-white/10 text-sm text-gray-300">
+                    <Zap className="w-4 h-4 text-purple-400" /> 100% Prático
+                </span>
+                <span className="flex items-center gap-1.5 px-3 py-1.5 bg-red-500/10 rounded-full border border-red-500/20 text-sm text-red-400 font-medium">
+                    <AlertCircle className="w-4 h-4" /> Sem Replay
+                </span>
+            </div>
+
+            {/* Mobile-only CTA */}
+            <div className="lg:hidden w-full mt-4">
+                <Button variant="primary" fullWidth onClick={onCtaClick} className="shadow-xl shadow-purple-900/20">
+                    QUERO GARANTIR MEU ACESSO GRATUITO
+                </Button>
+                <p className="text-xs text-center text-gray-500 mt-3">Vagas limitadas no grupo VIP.</p>
+            </div>
+
+          </div>
+
+          {/* Right Column: Form */}
+          <div className="lg:col-span-5 w-full">
+            <RegistrationForm />
+          </div>
+
         </div>
       </div>
-      
-      {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#050508] to-transparent z-0"></div>
     </section>
   );
 };
