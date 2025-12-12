@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
            <img 
             src="https://storage.googleapis.com/msgsndr/dkM0aNpySiIFf3uusFTa/media/693af904517c3a084b5d8cf1.png" 
             alt="Power House Logo" 
-            className="h-[300px] sm:h-60 mx-auto drop-shadow-[0_0_35px_rgba(168,85,247,0.5)] "
+            className="h-[200px] sm:h-[300px]   mx-auto drop-shadow-[0_0_35px_rgba(168,85,247,0.5)] "
           />
           
         </div>
